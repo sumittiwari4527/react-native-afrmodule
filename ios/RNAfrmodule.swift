@@ -101,7 +101,7 @@ class RNAfrmodule: RCTEventEmitter {
         if(peripherals?[peripheralId]?.state != .connected)
         {
             selectedPeriPheral=peripheralId
-            AmazonFreeRTOSManager.shared.connectPeripheral((peripherals?[peripheralId])!)
+            AmazonFreeRTOSManager.shared.connectPeripheral((peripherals?[peripheralId])!, reconnect: true)
             scanDevice()
         }
         else
